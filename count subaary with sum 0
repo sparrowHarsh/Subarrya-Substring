@@ -14,3 +14,21 @@ As there are negative numbers also so sum can decrease too. If at any 2 indexes 
 same it means that the sum between these 2 indexes is zero. (first increase then it decreased to 0)
 
 Code:
+#include <bits/stdc++.h> 
+int countSubarrays(int n, vector<int> &arr){
+    map<int,int> mp;
+    int ans = 0;
+    int sum = 0;
+    mp[sum] = 1;
+    for(int i=0;i<n;i+=1){
+        sum+=arr[i];
+        if(mp.find(sum)!=mp.end()){
+            ans+=mp[sum];
+        }
+        mp[sum]+=1;
+    }
+    return ans;
+}
+
+Time complexity: O(N)
+Space Complexity: O(N)
