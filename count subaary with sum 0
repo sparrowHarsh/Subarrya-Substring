@@ -1,2 +1,15 @@
 Problem : You are given ‘N’ integers in the form of an array ‘ARR’. Count the number of subarrays having their sum as 0.
 
+Logic:
+one is BruteForce by help of 2 Nested loop we can easily calculate the answer
+
+Improved: O(N)
+
+Here we use Prefix sum concept. a[] = {1,2,-3,4,-1}
+pref[]= {1,3,0,4,3},  we can see that pref[2] = 0. It clearly increase answer to 1
+Now we can observe one more thing pref[1] = 3 and pref[4] = 3, It so we can say that sum between ar[3] to ar[4] will be zero.
+proof:
+As we are taking continous subarray sum should only increase But this will be in the case of only positive number, As there are negative numbers also so sum can decrease too. If at any 2 indexes prefix sum is 
+same it means that the sum between these 2 indexes is zero. (first increase then it decreased to 0)
+
+Code:
